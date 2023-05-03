@@ -1,0 +1,30 @@
+.carousel-item {
+    height: 85vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+  }
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* adjust the opacity value as needed */
+    z-index: 1;
+  }
+  .carousel-image-overlay {
+    position: relative;
+  }
+  
+  .carousel-image-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  

@@ -10,7 +10,7 @@ const Footer = () => {
       <Container>
         <Row className="justify-content-center">
           <Col md={4} sm={12} className="mb-4 mb-md-0">
-            <h5>About updated ShaderKhabar</h5>
+            <h5>About ShaderKhabar</h5>
             <p className="text-muted">ShaderKhabar is a website dedicated to showcasing recipes from all available chefs. Our mission is to provide a platform for chefs to share their expertise and for food lovers to discover new and exciting dishes.</p>
             <ul className="list-unstyled social-links mt-3">
               <li><a href="#"><FaLinkedin /> Connect us on LinkedIn</a></li>
