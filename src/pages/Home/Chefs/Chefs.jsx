@@ -16,20 +16,14 @@ const Chefs = () => {
         <div>
             <h3>All Chefs</h3>
             {
-                chefData.map(chef=>
-                <ChefCard></ChefCard>
+                chefData.map(chef =>
+                    <ChefCard chef={chef}></ChefCard>
                 )
-
-
-
                 // chefData.map(chef=><p
                 // key={chef.chef_id}>
                 //     {chef.chef_name}
                 // </p>)
-                // chefData.map(chef=><ChefCard></ChefCard>)
-
-
-                
+                // chefData.map(chef=><ChefCard></ChefCard>)  
             }
 
         </div>
