@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import ChefCard from './ChefCard';
-import './Chefs.css';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import './Recipe.css';
 
-const Chefs = () => {
+import RecipeCard from './RecipeCard';
+
+
+const Recipes = () => {
     const [chefData, setChefData] = useState([]);
 
     useEffect(() => {
@@ -17,11 +20,11 @@ const Chefs = () => {
             <h3 className='text-center'>All Chefs</h3>
             <div className="chef-cards ">
                 {chefData.map((chef) => (
-                    <ChefCard key={chef.chef_id} chef={chef} />
+                    <RecipeCard key={chef.chef_id} chef={chef} />
                 ))}
             </div>
         </div>
-    );
+    )
 };
 
-export default Chefs;
+export default Recipes;

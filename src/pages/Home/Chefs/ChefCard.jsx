@@ -1,28 +1,35 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import './ChefCard.css';
 
-
-const ChefCard = (chef) => {
-    //<span className='fw-semibold'></span> 
-    // console.log("this is chef ", chef);
+const ChefCard = (props) => {
     return (
-        <div>
+        <div className="chef-card">
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={chef.chef.chef_picture} />
+                <Card.Img variant="top" src={props.chef.chef_picture} />
                 <Card.Body>
-                    <Card.Title> <strong>{chef.chef.chef_name}</strong> </Card.Title>
+                    <Card.Title>
+                        <strong>{props.chef.chef_name}</strong>
+                    </Card.Title>
                     <Card.Text>
-                        <p> <span className='fw-semibold'>Years of experience: </span> {chef.chef.years_of_experience} </p>
-                        <p><span className='fw-semibold'>Numbers of recipes: </span>${(chef.chef.recipes).length} </p>
-                        <p><span className='fw-semibold'>Likes: </span>{chef.chef.Likes}</p>
+
+                        <span className="fw-semibold">Years of experience: </span>
+                        {props.chef.years_of_experience}
+                        <br />
+
+                        <span className="fw-semibold">Number of recipes: </span>
+                        {props.chef.recipes.length}
+
+                        <br />
+                        <span className="fw-semibold">Likes: </span>
+                        {props.chef.Likes}
+                        <br />
+
                     </Card.Text>
-                    <Button variant="primary">View Recipes </Button>
+                    <Button variant="primary">View Recipes</Button>
                 </Card.Body>
             </Card>
-
-
-
         </div>
     );
 };

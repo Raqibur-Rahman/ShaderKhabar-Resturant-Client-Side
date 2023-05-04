@@ -1,0 +1,30 @@
+.chef-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  .chef-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .chef-cards {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .chef-card {
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .chef-card {
+      flex-basis: calc(33.33% - 20px);
+      margin-bottom: 20px;
+    }
+  }
+  
