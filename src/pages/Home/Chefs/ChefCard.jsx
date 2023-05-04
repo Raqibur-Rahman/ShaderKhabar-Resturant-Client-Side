@@ -2,8 +2,12 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ChefCard.css';
+import { Link } from 'react-router-dom';
 
 const ChefCard = (props) => {
+    const handelViewRecipes = () => {
+        console.log("clicked Id");
+    }
     return (
         <div className="chef-card">
             <Card style={{ width: '18rem' }}>
@@ -27,7 +31,13 @@ const ChefCard = (props) => {
                         <br />
 
                     </Card.Text>
-                    <Button variant="primary">View Recipes</Button>
+                    <Link to={`/chefs/${props.chef.chef_id}`}>
+                        <Button variant="primary">
+                            <span className='text-white text-decoration-none fw-bold'>View Recipes</span>
+                        </Button>
+                    </Link>
+
+
                 </Card.Body>
             </Card>
         </div>

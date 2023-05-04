@@ -1,7 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './Recipe.css';
-
 import RecipeCard from './RecipeCard';
 
 
@@ -17,7 +16,7 @@ const Recipes = () => {
 
     return (
         <div className="chef-container">
-            <h3 className='text-center'>All Chefs</h3>
+            <h3 className='text-center'>Names</h3>
             <div className="chef-cards ">
                 {chefData.map((chef) => (
                     <RecipeCard key={chef.chef_id} chef={chef} />
