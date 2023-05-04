@@ -16,7 +16,6 @@ const Recipes = () => {
 
     return (
         <div className="chef-container">
-            <h3 className='text-center'>Names</h3>
             <div className="chef-cards ">
                 {chefData.map((chef) => (
                     <RecipeCard key={chef.chef_id} chef={chef} />

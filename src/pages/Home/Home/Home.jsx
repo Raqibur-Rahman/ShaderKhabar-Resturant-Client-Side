@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom';
 const Home = () => {
     return (
         <div>
+            <Outlet></Outlet>
             <Banner></Banner>
             <Chefs></Chefs>
             {/* <Recipes></Recipes> */}

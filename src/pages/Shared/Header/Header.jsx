@@ -16,7 +16,10 @@ const Header = () => {
                 <div className='d-flex '>
                     <div><img src={logo} alt="" /></div>
                     <div>
-                        <Navbar.Brand href="#home" className='fw-bold fs-1 p-1 text-danger'>ShaderKhabar</Navbar.Brand>
+                        <Navbar.Brand >
+                            <Link to="/" className="text-decoration-none fw-bold fs-1 p-1 text-danger">ShaderKhabar</Link>
+
+                        </Navbar.Brand>
                     </div>
                 </div>
                 <Container>

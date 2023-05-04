@@ -1,11 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Recipes from '../../../Recipes/Recipes';
+import RecipeCard from '../../../Recipes/RecipeCard';
 
 const ChefDetail = () => {
     const {id} = useParams();
     return (
         <div>
-            <h3>This is details: {id}</h3>
+            <Recipes></Recipes>
         </div>
     );
 };

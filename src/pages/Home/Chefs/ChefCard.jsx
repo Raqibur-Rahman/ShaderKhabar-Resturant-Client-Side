@@ -5,9 +5,7 @@ import './ChefCard.css';
 import { Link } from 'react-router-dom';
 
 const ChefCard = (props) => {
-    const handelViewRecipes = () => {
-        console.log("clicked Id");
-    }
+  
     return (
         <div className="chef-card">
             <Card style={{ width: '18rem' }}>
