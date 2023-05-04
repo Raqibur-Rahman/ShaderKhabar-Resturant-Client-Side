@@ -1,30 +1,98 @@
 .carousel-item {
-    height: 85vh;
+  height: 85vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* adjust the opacity value as needed */
+  z-index: 1;
+}
+
+.carousel-image-overlay {
+  position: relative;
+}
+
+.carousel-image-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.carousel-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-image-overlay img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .carousel-caption {
+    font-size: 1.2rem;
+  }
+
+  .carousel {
+    height: 500px;
+  }
+
+  .carousel-item {
+    height: 500px;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+
+  }
+
+}
+
+
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    font-size: 1rem;
+  }
+
+  .carousel {
+    height: 450px;
+  }
+
+  .carousel-item {
+    height: 450px;
     width: 100vw;
     background-size: cover;
     background-position: center;
   }
-  .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* adjust the opacity value as needed */
-    z-index: 1;
-  }
-  .carousel-image-overlay {
-    position: relative;
-  }
-  
-  .carousel-image-overlay::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  
+}

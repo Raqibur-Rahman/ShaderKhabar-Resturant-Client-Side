@@ -2,29 +2,30 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaEnvelope, FaLinkedin, FaTwitter, FaInstagram, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className="bg-info-subtle py-5">
-        
+
       <Container>
         <Row className="justify-content-center">
           <Col md={4} sm={12} className="mb-4 mb-md-0">
             <h5>About ShaderKhabar</h5>
             <p className="text-muted">ShaderKhabar is a website dedicated to showcasing recipes from all available chefs. Our mission is to provide a platform for chefs to share their expertise and for food lovers to discover new and exciting dishes.</p>
             <ul className="list-unstyled social-links mt-3">
-              <li><a href="#"><FaLinkedin /> Connect us on LinkedIn</a></li>
-              <li><a href="#"><FaTwitter /> Follow us on Twitter</a></li>
-              <li><a href="#"><FaInstagram /> Follow us on Instagram</a></li>
+              <li><Link to="#"><FaLinkedin /> Connect us on LinkedIn</Link></li>
+              <li><Link to="#"><FaTwitter /> Follow us on Twitter</Link></li>
+              <li><Link to="#"><FaInstagram /> Follow us on Instagram</Link></li>
             </ul>
           </Col>
           <Col md={4} sm={12} className="mb-4 mb-md-0">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Recipes</a></li>
-              <li><a href="#">Chefs</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><Link to="#">Home</Link></li>
+              <li><Link to="#">Recipes</Link></li>
+              <li><Link to="#">Chefs</Link></li>
+              <li><Link to="#">Contact Us</Link></li>
             </ul>
           </Col>
           <Col md={4} sm={12} className="mb-4 mb-md-0">
@@ -42,10 +43,10 @@ const Footer = () => {
             <p className="mb-0">&copy; 2023 ShaderKhabar. All rights reserved.</p>
           </Col>
           <Col md={6} className="text-center text-md-end">
-            <ul className="list-unstyled">
-              <li className="d-inline-block me-3"><a href="#">Terms of Use</a></li>
-              <li className="d-inline-block me-3"><a href="#">Privacy Policy</a></li>
-              <li className="d-inline-block me-3"><a href="#">Cookie Policy</a></li>
+            <ul className="list-unstyled d-flex justify-content-md-end">
+              <li className="me-md-3"><Link to="#">Terms of Use</Link></li>
+              <li className="me-md-3"><Link to="#">Privacy Policy</Link></li>
+              <li className="me-md-3"><Link to="#">Cookie Policy</Link></li>
             </ul>
           </Col>
         </Row>
