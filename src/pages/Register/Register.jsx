@@ -5,11 +5,28 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
-    const {} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(name, email, password);
+
+    }
+
+
+
+
+
     return (
         <Container className='w-25 mx-auto'>
-            <Form>
-                <h3 className='text-center'>Please Register</h3>
+            <h3 className='text-center'>Please Register</h3>
+            <Form onSubmit={handleRegister}>
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="name" name='name' placeholder="Enter name" required />
@@ -18,6 +35,11 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Photo URL</Form.Label>
+                    <Form.Control type="photo" name='photo' placeholder="Enter Photo URL(not mandatory)" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -30,7 +52,7 @@ const Register = () => {
 
 
                 <Button variant="primary" type="submit">
-                    Login
+                    Register
                 </Button>
 
                 <br />
