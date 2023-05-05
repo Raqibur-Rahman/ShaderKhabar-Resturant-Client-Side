@@ -1,5 +1,13 @@
 .navbar .nav-link {
-    text-decoration: none;
-    /* color: inherit; */
-  }
-  
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+.active-nav-link {
+  font-weight: bold;
+  color: green;
+}
+
+.active {
+  color: green !important;
+}

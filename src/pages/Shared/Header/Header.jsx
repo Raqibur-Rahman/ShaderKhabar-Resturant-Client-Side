@@ -29,13 +29,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fw-semibold navbar">
-                            <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
-                            <NavLink to="/chefs" className="nav-link" activeClassName="active">Chefs</NavLink>
-                            <NavLink to="/recipes" className="nav-link" activeClassName="active">Recipes</NavLink>
-                            <NavLink to="/recipesubmission" className="nav-link" activeClassName="active">Submit a Recipe</NavLink>
-                            <NavLink to="/blogs" className="nav-link" activeClassName="active">Blogs</NavLink>
-                            <NavLink to="/community" className="nav-link" activeClassName="active">Join in Community</NavLink>
-                            <NavLink to="/contact" className="nav-link" activeClassName="active">Contact Us</NavLink>
+                            <NavLink to="/" exact className="nav-link" activeClassName="active-nav-link">Home</NavLink>
+                            <NavLink to="/chefs" className="nav-link" activeClassName="active-nav-link">Chefs</NavLink>
+                            <NavLink to="/recipes" className="nav-link" activeClassName="active-nav-link">Recipes</NavLink>
+                            <NavLink to="/recipesubmission" className="nav-link" activeClassName="active-nav-link">Submit a Recipe</NavLink>
+                            <NavLink to="/blogs" className="nav-link" activeClassName="active-nav-link">Blogs</NavLink>
+                            <NavLink to="/community" className="nav-link" activeClassName="active-nav-link">Join in Community</NavLink>
+                            <NavLink to="/contact" className="nav-link" activeClassName="active-nav-link">Contact Us</NavLink>
                         </Nav>
 
                         <Nav className='fw-semibold'>
