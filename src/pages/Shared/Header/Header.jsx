@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import MyComponent from '../../../MyComponent';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+
 
 const Header = () => {
 
@@ -27,13 +29,13 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fw-semibold navbar">
-                            <Link to="/" className="nav-link">Home</Link>
-                            <Link to="/chefs" className="nav-link">Chefs</Link>
-                            <Link to="/recipes" className="nav-link">Recipes</Link>
-                            <Link to="/recipesubmission" className="nav-link">Submit a Recipe</Link>
-                            <Link to="/blogs" className="nav-link">Blogs</Link>
-                            <Link to="/community" className="nav-link">Join in Community</Link>
-                            <Link to="/contact" className="nav-link">Contact Us</Link>
+                            <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
+                            <NavLink to="/chefs" className="nav-link" activeClassName="active">Chefs</NavLink>
+                            <NavLink to="/recipes" className="nav-link" activeClassName="active">Recipes</NavLink>
+                            <NavLink to="/recipesubmission" className="nav-link" activeClassName="active">Submit a Recipe</NavLink>
+                            <NavLink to="/blogs" className="nav-link" activeClassName="active">Blogs</NavLink>
+                            <NavLink to="/community" className="nav-link" activeClassName="active">Join in Community</NavLink>
+                            <NavLink to="/contact" className="nav-link" activeClassName="active">Contact Us</NavLink>
                         </Nav>
 
                         <Nav className='fw-semibold'>
