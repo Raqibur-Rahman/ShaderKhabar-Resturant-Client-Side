@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Recipe.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useParams } from 'react-router-dom';
+import Toast from 'react-bootstrap/Toast';
 
 const RecipeCard = (props) => {
 
     const { id } = useParams();
     console.log("id is ", id);
     console.log(props);
+
+    const [buttonClicked, setButtonClicked] = useState(Array(props.chef.recipes.length).fill(false));
+
+    const handleButtonClick = (index) => {
+        const newButtonClicked = [...buttonClicked];
+        newButtonClicked[index] = true;
+        setButtonClicked(newButtonClicked);
+    }
 
     if (props.chef.chef_id === Number(id)) {
         return (
@@ -35,14 +44,12 @@ const RecipeCard = (props) => {
                     </div>
                 </div>
 
-
-
                 <div className='chef-cards'>
 
-                    {props.chef.recipes.map(recipe => (
+                    {props.chef.recipes.map((recipe, index) => (
 
                         <Card className='recipe-card' style={{ width: '18rem' }}>
-                            <Card.Img  variant="top" src={recipe.recipe_image} />
+                            <Card.Img variant="top" src={recipe.recipe_image} />
                             <Card.Body>
                                 <Card.Title> <span className="fw-bold">{recipe.recipe_name}</span> </Card.Title>
                                 <Card.Text>
@@ -54,7 +61,7 @@ const RecipeCard = (props) => {
                                 <Card.Text>
                                     <span className="fw-semibold">Recipe Rating: </span> <br /> {recipe.rating}
                                 </Card.Text>
-                                <Button variant="primary">Add as Favorite</Button>
+                                <Button variant="primary" disabled={buttonClicked[index]} onClick={() => handleButtonClick(index)}>Add as Favorite</Button>
                             </Card.Body>
                         </Card>
 
@@ -62,9 +69,12 @@ const RecipeCard = (props) => {
 
                 </div>
 
-
-
-
+                <Toast className="favorite-toast bg-success" onClose={() => setButtonClicked(Array(props.chef.recipes.length).fill(false))} show={buttonClicked.includes(true)} autohide style={{ position: 'fixed', top: '50%', right: '0', transform: 'translateY(-50%)' }}>
+                    <Toast.Header>
+                        <strong className="me-auto fw-bold">Favorite Recipe</strong>
+                    </Toast.Header>
+                    <Toast.Body>This recipe has been added to your favorites!</Toast.Body>
+                </Toast>
 
             </div>
         )
