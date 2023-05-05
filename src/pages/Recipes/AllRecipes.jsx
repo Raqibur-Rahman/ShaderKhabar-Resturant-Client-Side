@@ -1,20 +1,35 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Recipe.css';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import './Recipe.css';
+import Spinner from 'react-bootstrap/Spinner';
 
 const AllRecipes = () => {
     const [chefData, setChefData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('http://localhost:5000/chefs')
             .then((res) => res.json())
-            .then((data) => setChefData(data))
-            .catch((error) => console.log(error));
+            .then((data) => {
+                setChefData(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.log(error);
+                setLoading(false);
+            });
     }, []);
+
+    if (loading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+                <Spinner animation="border" variant="warning" />
+            </div>
+        );
+    }
 
     return (
         <div>
@@ -45,6 +60,5 @@ const AllRecipes = () => {
         </div>
     );
 };
-
 
 export default AllRecipes;

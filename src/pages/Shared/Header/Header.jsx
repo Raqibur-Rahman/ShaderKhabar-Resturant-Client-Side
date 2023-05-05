@@ -40,9 +40,11 @@ const Header = () => {
 
                         <Nav className='fw-semibold'>
 
-                            <button className='border border-0 p-0 m-0'>
+                            <NavLink to="/login" className="nav-link" activeClassName="active-nav-link"><button className='border border-0 p-0 m-0'>
                                 <img src={profileLogo} alt="" />
-                            </button>
+                            </button></NavLink>
+
+
 
                         </Nav>
                     </Navbar.Collapse>

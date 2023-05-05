@@ -5,6 +5,11 @@ import ChefDetail from "../pages/Home/Home/ChefDetail/ChefDetail";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Chefs from "../pages/Home/Chefs/Chefs";
 import AllRecipes from "../pages/Recipes/AllRecipes";
+import Blogs from "../pages/Blogs/Blogs";
+import RecipeSubmission from "../pages/RecipeSubmission/RecipeSubmission";
+import Community from "../pages/community/community";
+import Contact from "../pages/Contact/Contact";
+import Login from "../pages/Login/Login";
 
 
 const router = createBrowserRouter([
@@ -28,9 +33,31 @@ const router = createBrowserRouter([
                 path: '/chefs',
                 element: <Chefs></Chefs>
             }
+            ,
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+            },
+            {
+                path: '/recipesubmission',
+                element: <RecipeSubmission></RecipeSubmission>
+            },
+            {
+                path: '/community',
+                element: <Community></Community>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
+            }
 
         ]
     },
+    {
+        path:'/login',
+        element:<Login></Login>
+    }
+    ,
     {
         path: '*',
         element: <ErrorPage></ErrorPage>
