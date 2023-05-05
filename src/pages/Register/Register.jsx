@@ -1,16 +1,23 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
-const Login = () => {
+const Register = () => {
+    const {} = useContext(AuthContext);
     return (
         <Container className='w-25 mx-auto'>
             <Form>
-                <h3 className='text-center'>Please Login</h3>
+                <h3 className='text-center'>Please Register</h3>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="name" name='name' placeholder="Enter name" required />
+                </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" name='email' placeholder="Enter email" required />
-
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -18,10 +25,10 @@ const Login = () => {
                     <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
+                    <Form.Check type="checkbox" name='accept' label="Accept Terms and conditions." />
                 </Form.Group>
 
-                
+
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
@@ -29,7 +36,7 @@ const Login = () => {
                 <br />
 
                 <Form.Text className="text-secondary">
-                    Don't Have an Account? <Link to='/register'>Register</Link>
+                    Already Have an Account? <Link to='/login'>Login</Link>
                 </Form.Text>
 
 
@@ -45,4 +52,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

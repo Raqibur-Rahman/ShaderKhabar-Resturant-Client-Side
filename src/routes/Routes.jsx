@@ -10,6 +10,7 @@ import RecipeSubmission from "../pages/RecipeSubmission/RecipeSubmission";
 import Community from "../pages/community/community";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -49,13 +50,18 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            }
+            ,
+            {
+                path: '/register',
+                element: <Register></Register>
             }
 
         ]
-    },
-    {
-        path:'/login',
-        element:<Login></Login>
     }
     ,
     {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../../assets/cooking.png';
 import profileLogo from '../../../assets/user.png';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
@@ -7,10 +7,14 @@ import './Header.css';
 import MyComponent from '../../../MyComponent';
 import { Popover, OverlayTrigger } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 
 const Header = () => {
 
+    const { user } = useContext(AuthContext);
+    console.log('context ', user);
     return (
         <div>
 
@@ -29,20 +33,34 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto fw-semibold navbar">
-                            <NavLink to="/" exact className="nav-link" activeClassName="active-nav-link">Home</NavLink>
-                            <NavLink to="/chefs" className="nav-link" activeClassName="active-nav-link">Chefs</NavLink>
-                            <NavLink to="/recipes" className="nav-link" activeClassName="active-nav-link">Recipes</NavLink>
-                            <NavLink to="/recipesubmission" className="nav-link" activeClassName="active-nav-link">Submit a Recipe</NavLink>
-                            <NavLink to="/blogs" className="nav-link" activeClassName="active-nav-link">Blogs</NavLink>
-                            <NavLink to="/community" className="nav-link" activeClassName="active-nav-link">Join in Community</NavLink>
-                            <NavLink to="/contact" className="nav-link" activeClassName="active-nav-link">Contact Us</NavLink>
+                            <Link to="/" exact className="nav-link" activeClassName="active-nav-link">Home</Link>
+                            <Link to="/chefs" className="nav-link" activeClassName="active-nav-link">Chefs</Link>
+                            <Link to="/recipes" className="nav-link" activeClassName="active-nav-link">Recipes</Link>
+                            <Link to="/recipesubmission" className="nav-link" activeClassName="active-nav-link">Submit a Recipe</Link>
+                            <Link to="/blogs" className="nav-link" activeClassName="active-nav-link">Blogs</Link>
+                            <Link to="/community" className="nav-link" activeClassName="active-nav-link">Join in Community</Link>
+                            <Link to="/contact" className="nav-link" activeClassName="active-nav-link">Contact Us</Link>
                         </Nav>
 
                         <Nav className='fw-semibold'>
 
-                            <NavLink to="/login" className="nav-link" activeClassName="active-nav-link"><button className='border border-0 p-0 m-0'>
-                                <img src={profileLogo} alt="" />
-                            </button></NavLink>
+
+                            {
+                                user &&
+                                <FaUserCircle style={{ fontSize: '3rem' }}></FaUserCircle>
+
+
+                            }
+
+
+                            {user ?
+                                <button type="button" class="btn btn-secondary">Logout</button>
+                                :
+                                <Link to='/login'>
+                                    <button type="button" class="btn btn-secondary">Login</button>
+                                </Link>
+                            }
+
 
 
 
